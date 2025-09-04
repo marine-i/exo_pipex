@@ -1,12 +1,19 @@
 #include <stdio.h>
-
-int main(void)
+#include <unistd.h>
+int main(int ac, char **av)
 {
-    int a = 5;
-    int b = 10;
-    int c = 0;
+    int i;
+    i = 0;
+    
+    if (ac == 2)
+    {
+        while (av[1][i])
+        {
+            write(1, &av[1][i], 1);
+            i++;
+        }
 
-    c = a + b;
-    printf("Résultat = %d\n", c);
-    return 0;
+    }
+    write(1, "\n", 1);
 }
+

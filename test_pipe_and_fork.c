@@ -4,10 +4,10 @@
 
 int	main(void)
 {
-	int	fd[2];
-	int	fd_pipe;
+	int		fd[2];
+	int		fd_pipe;
 	__pid_t	pid;
-	char buf[50];
+	char	buf[50];
 
 	fd_pipe = pipe(fd);
 	if (fd_pipe == -1)
@@ -32,7 +32,7 @@ int	main(void)
 		// attend le fils sinon shell peut afficher le prompt avant le reésultat du read
 		return (0);
 	}
-	else if (pid == 0)
+	if (pid == 0)
 	{
 		close (fd[1]);
 		read(fd[0], buf, 4);
